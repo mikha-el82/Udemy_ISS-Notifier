@@ -16,7 +16,10 @@ def iss_overhead():
     iss_longitude = float(data["iss_position"]["longitude"])
 
     if abs(iss_latitude - MY_LAT) < 5 and abs(iss_longitude - MY_LONG) < 5:
+        print("ISS is overhead!")
         return True
+    else:
+        print("ISS not overhead...")
 
 
 def is_night():
@@ -35,7 +38,10 @@ def is_night():
     time_now = datetime.now()
 
     if time_now.hour >= sunset or time_now.hour <= sunrise:
+        print("It is night!")
         return True
+    else:
+        print("It is day...")
 
 
 def send_mail():
